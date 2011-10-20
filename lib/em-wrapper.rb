@@ -30,9 +30,11 @@ module EM
             op = OP::catch(object)
             op.method_call do |name, args, block|
                 op.wrapped.send(name, *args) do |result|
-                    EM::next_tick do
-                        result = [result] if not result.array?
-                        block.call(*result)
+                    if not block.nil?
+                        EM::next_tick do
+                            result = [result] if not result.array?
+                            block.call(*result)
+                        end
                     end
                 end
             end
