@@ -1,7 +1,7 @@
 EventMachine Wrapper
 ====================
 
-**em-wrapper** wraps objects callbacks to EventMachine next ticks using
+**em-wrapper** wraps objects callbacks to [EventMachine][8] next ticks using
 `EM::next_tick`, so allows transparent multiplexing of objects which 
 aren't multiplexable by default.
 
@@ -46,5 +46,6 @@ Copyright
 Copyright &copy; 2011 [Martin Kozák][10]. See `LICENSE.txt` for
 further details.
 
-[9]: http://github.com/martinkozak/callback-batch/issues
+[8]: http://rubyeventmachine.com/
+[9]: http://github.com/martinkozak/em-wrapper/issues
 [10]: http://www.martinkozak.net/
