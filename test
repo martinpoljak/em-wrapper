@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+# encoding: utf-8
+# (c) 2011 Martin Kozák (martinkozak@martinkozak.net)
+
+$:.push("./lib")
+$:.unshift("./lib")
+
+require "em-wrapper"
+require "eventmachine"
+
+class Foo
+    def foo
+        yield :foo
+        return :bar
+    end
+end
+
+wrapped = EM::Wrapper::new(Foo::new)
+EM::run do
+    p wrapped.foo { |value|      # will print :bar out
+        p value                  # will be run in next EM tick, will print :foo out
+    }
+end
