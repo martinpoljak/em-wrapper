@@ -22,14 +22,24 @@ module EM
         ##
         # Creates new wrapper.
         #
-        # @param [Object] object  wrapped object
-        # @return [Object]  another object of the same class linked to original object
+        # @param [Object, Class] cls  wrapped object or class
+        # @return [Object, Class]  another object or class of the same class linked to original object
         #
         
-        def self.new(object)
-            op = OP::catch(object)
+        def self.new(cls)
+            op = OP::catch(cls)
+            instance = nil
+            
+            if cls.kind_of? Class
+                op.instance_created do |object|
+                    instance = object
+                end
+            else
+                instance = op
+            end
+            
             op.method_call do |name, args, block|
-                op.wrapped.send(name, *args) do |result|
+                instance.wrapped.send(name, *args) do |result|
                     if not block.nil?
                         EM::next_tick do
                             result = [result] if not result.array?
@@ -45,8 +55,3 @@ module EM
     end
 end
 
-=begin
-w = EM::Wrapper::new("xxx")
-p w
-p w.kind_of? String
-=end

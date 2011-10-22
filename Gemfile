@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 # Add dependencies required to use your gem here.
 # Example:
-  gem "object-proxy", ">= 0.2.0"
+  gem "object-proxy", ">= 0.3.0"
   gem "hash-utils", ">= 0.17.0"
   gem "eventmachine", ">= 0"
 

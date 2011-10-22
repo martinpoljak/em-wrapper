@@ -15,7 +15,7 @@ class Foo
     end
 end
 
-wrapped = EM::Wrapper::new(Foo::new)
+wrapped = EM::Wrapper::new(Foo)::new
 EM::run do
     p wrapped.foo { |value|      # will print :bar out
         p value                  # will be run in next EM tick, will print :foo out

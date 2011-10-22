@@ -5,8 +5,8 @@ EventMachine Wrapper
 `EM::next_tick`, so allows transparent multiplexing of objects which 
 aren't multiplexable by default.
 
-It provides proxied object, so returned object is kind of the same class
-as wrapped object, with different `#object_id` only. Also standard returns
+It provides proxied class, so returned class is kind of the same class
+as wrapped class, with different `#object_id` only. Also standard returns
 work as expected and as is usuall. 
   
 See some example:
@@ -21,10 +21,10 @@ See some example:
         end
     end
     
-    wrapped = EM::Wrapper::new(Foo::new)
+    wrapped = EM::Wrapper::new(Foo)::new
     EM::run do
-        p wrapped.foo { |value|      # will print :bar out
-            p value                   # will be run in next EM tick, will print :foo out
+        p wrapped.foo { |value|      # 1. will print :bar out
+            p value                  # 2. will be run in next EM tick, will print :foo out
         }
     end    
     
