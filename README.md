@@ -27,7 +27,9 @@ See some example:
             p value                  # 2. will be run in next EM tick, will print :foo out
         }
     end    
-    
+
+Also object wrapping is supported. In that case, simply give object instance
+instead of class object to the constructor. Wrapped object instance will be returned.
 
 Contributing
 ------------

@@ -9,9 +9,9 @@ GEM
       bundler (~> 1.0)
       git (>= 1.2.5)
       rake
-    object-proxy (0.2.0)
+    object-proxy (0.3.0)
       hash-utils (>= 0.12.1)
-    rake (0.9.2)
+    rake (0.9.2.2)
     riot (0.12.5)
       rr
     rr (1.0.4)
@@ -25,5 +25,5 @@ DEPENDENCIES
   eventmachine
   hash-utils (>= 0.17.0)
   jeweler (>= 1.5.2)
-  object-proxy (>= 0.2.0)
+  object-proxy (>= 0.3.0)
   riot (>= 0.12.3)
