@@ -41,20 +41,20 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<object-proxy>, [">= 0.3.0"])
       s.add_runtime_dependency(%q<eventmachine>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 1.0.0"])
-      s.add_development_dependency(%q<jeweler2>, [">= 2.0.0"])
+      s.add_development_dependency(%q<jeweler>, [">= 1.5.2"])
       s.add_development_dependency(%q<riot>, [">= 0.12.3"])
     else
       s.add_dependency(%q<object-proxy>, [">= 0.3.0"])
       s.add_dependency(%q<eventmachine>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 1.0.0"])
-      s.add_dependency(%q<jeweler2>, [">= 2.0.0"])
+      s.add_dependency(%q<jeweler>, [">= 1.5.2"])
       s.add_dependency(%q<riot>, [">= 0.12.3"])
     end
   else
     s.add_dependency(%q<object-proxy>, [">= 0.3.0"])
     s.add_dependency(%q<eventmachine>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 1.0.0"])
-    s.add_dependency(%q<jeweler2>, [">= 2.0.0"])
+    s.add_dependency(%q<jeweler>, [">= 1.5.2"])
     s.add_dependency(%q<riot>, [">= 0.12.3"])
   end
 end
