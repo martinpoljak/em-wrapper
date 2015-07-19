@@ -1,18 +1,18 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    eventmachine (0.12.10)
-    git (1.2.5)
-    hash-utils (2.0.0)
-      ruby-version
+    eventmachine (1.0.7)
+    git (1.2.9.1)
+    hash-utils (2.2.0)
+      ruby-version (>= 0.4.0)
     jeweler2 (2.0.9)
       git (>= 1.2.5)
     object-proxy (0.3.0)
       hash-utils (>= 0.12.1)
-    riot (0.12.5)
+    riot (0.12.7)
       rr
-    rr (1.0.4)
-    ruby-version (0.3.1)
+    rr (1.1.2)
+    ruby-version (0.4.3)
 
 PLATFORMS
   ruby
@@ -20,7 +20,9 @@ PLATFORMS
 DEPENDENCIES
   bundler (>= 1.0.0)
   eventmachine
-  hash-utils (>= 0.17.0)
   jeweler2 (>= 2.0.0)
   object-proxy (>= 0.3.0)
   riot (>= 0.12.3)
+
+BUNDLED WITH
+   1.10.5
