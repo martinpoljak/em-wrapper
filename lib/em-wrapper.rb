@@ -1,7 +1,6 @@
 # encoding: utf-8
-# (c) 2011 Martin Kozák (martinkozak@martinkozak.net)
+# (c) 2011 - 2015 Martin Poljak (martin@poljak.cz)
 
-require "hash-utils/object"
 require "object-proxy"
 require "eventmachine"
 
@@ -34,7 +33,7 @@ module EM
                     object.wrapped.send(name, *args) do |result|
                         if not block.nil?
                             EM::next_tick do
-                                result = [result] if not result.array?
+                                result = [result] if not result.kind_of? Array
                                 block.call(*result)
                             end
                         end
@@ -55,4 +54,3 @@ module EM
         
     end
 end
-
